@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOS_HB4_ONBOARDING_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="businessPartner" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="partner"/>
+                    <PropertyRef Name="cuit"/>
+                </Key>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Business partner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cuit" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Cuit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mail" Type="Edm.String" Nullable="false" MaxLength="244" sap:unicode="false" sap:label="E-mail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="razonSocial" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Razon Social" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nombre" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Nombre" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="apellido" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Apellido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="domFiscal" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Domicilio" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="domFiscalNumero" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="N°" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="localidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Localidad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codigoPostal" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Codigo Postal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="telefono" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Telefono" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="movil" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Celular" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mailAlternativo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Mail Alternativo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isBloqueado" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="¿Esta Bloqueado?" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="provincia" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Provincia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mensaje" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="datosLanding" Relationship="ZOS_HB4_ONBOARDING_SRV.BusinessPartnerToDatosLanding" FromRole="FromRole_BusinessPartnerToDatosLanding" ToRole="ToRole_BusinessPartnerToDatosLanding"/>
+            </EntityType>
+            <EntityType Name="datosLanding" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="partner"/>
+                    <PropertyRef Name="cuit"/>
+                </Key>
+                <Property Name="partner" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cuit" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nombre" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="apellido" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="razonSocial" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mail" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cultivo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cultivoStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="variedad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="variedadStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="provincia" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="provinciaStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="localidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="localidadStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zona" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="rindeEsperado" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="onBoardingCompleto" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicador" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descProvincia" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descLocalidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="businessPartner" Relationship="ZOS_HB4_ONBOARDING_SRV.BusinessPartnerToDatosLanding" FromRole="ToRole_BusinessPartnerToDatosLanding" ToRole="FromRole_BusinessPartnerToDatosLanding"/>
+            </EntityType>
+            <EntityType Name="localidad" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pais"/>
+                    <PropertyRef Name="provinciaCode"/>
+                    <PropertyRef Name="localidadCode"/>
+                </Key>
+                <Property Name="pais" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="provinciaCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="localidadCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="descripcion" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="provincia" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pais"/>
+                    <PropertyRef Name="provinciaCode"/>
+                </Key>
+                <Property Name="pais" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="provinciaCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="descripcion" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="pdfPedido" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pedido"/>
+                </Key>
+                <Property Name="pedido" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="descripcion" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mimetype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="valueStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="firma" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="partner" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="componentes" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="materialLote"/>
+                    <PropertyRef Name="nombreCampo"/>
+                    <PropertyRef Name="material"/>
+                </Key>
+                <Property Name="materialLote" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nombreCampo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="material" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cantidad" Type="Edm.String" sap:unicode="false" sap:label="Ctd.necesaria" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="um" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="UM entrada" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="fechaNecesidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Fecha necesidad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descripcionMaterial" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="onBoarding" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="densidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="lotes" Relationship="ZOS_HB4_ONBOARDING_SRV.lotesToComponentes" FromRole="ToRole_lotesToComponentes" ToRole="FromRole_lotesToComponentes"/>
+            </EntityType>
+            <EntityType Name="lotes" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="materialLote"/>
+                    <PropertyRef Name="nombreCampo"/>
+                </Key>
+                <Property Name="materialLote" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nombreCampo" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cantidad" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="precio" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="fechaEntrega" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cultivo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="variedad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="provincia" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="localidad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zona" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="rindeEsperado" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="direccionEntrega" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="coordenadasPolig" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="contactoEntrega" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="telefonoEntrega" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="aporte" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="potencialRinde" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ha" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="variedadCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cultivoCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="observaciones" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pedidoTemp" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="componentesSet" Relationship="ZOS_HB4_ONBOARDING_SRV.lotesToComponentes" FromRole="FromRole_lotesToComponentes" ToRole="ToRole_lotesToComponentes"/>
+            </EntityType>
+            <EntityType Name="pedidoNuevo" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="partner"/>
+                </Key>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pedido" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mensaje" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="To_BP" Relationship="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToBusinessPartner" FromRole="FromRole_pedidoNuevoToBusinessPartner" ToRole="ToRole_pedidoNuevoToBusinessPartner"/>
+                <NavigationProperty Name="To_Lotes" Relationship="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToLotes" FromRole="FromRole_pedidoNuevoToLotes" ToRole="ToRole_pedidoNuevoToLotes"/>
+                <NavigationProperty Name="To_Componentes" Relationship="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToComponentes" FromRole="FromRole_pedidoNuevoToComponentes" ToRole="ToRole_pedidoNuevoToComponentes"/>
+                <NavigationProperty Name="To_PDF" Relationship="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToPDF" FromRole="FromRole_pedidoNuevoToPDF" ToRole="ToRole_pedidoNuevoToPDF"/>
+            </EntityType>
+            <EntityType Name="nroPedido" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NroPedido"/>
+                </Key>
+                <Property Name="NroPedido" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Nro. pedido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HayPersistencia" Type="Edm.Boolean" sap:unicode="false" sap:label="Existe persistencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="disponible" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Cultivo"/>
+                    <PropertyRef Name="Variedad"/>
+                </Key>
+                <Property Name="Cultivo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cultivo" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Variedad" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Variedad" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="StockDisponible" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="2" sap:unicode="false" sap:label="Disponible" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="fecha" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SiembraDesde"/>
+                    <PropertyRef Name="EntregaDesde"/>
+                </Key>
+                <Property Name="SiembraDesde" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Fecha siembra desde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EntregaDesde" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Fecha entrega desde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LinkAnexo3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LinkAnexo4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LinkAnexo5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LinkAnexo6" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LinkVariedades" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MicrostarTrigo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MicrostarSoja" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GlufoTrigo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GlufoSoja" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="cultivo" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Cultivo"/>
+                </Key>
+                <Property Name="Cultivo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CultivoCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="persistencia" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Partner"/>
+                </Key>
+                <Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Partner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CartaOferta" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Carta Aporte" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DataPersonales" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DataLotes" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="parametros" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="key"/>
+                </Key>
+                <Property Name="key" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="valor" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="BusinessPartnerToDatosLanding" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.businessPartner" Multiplicity="1" Role="FromRole_BusinessPartnerToDatosLanding"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.datosLanding" Multiplicity="1" Role="ToRole_BusinessPartnerToDatosLanding"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_BusinessPartnerToDatosLanding">
+                        <PropertyRef Name="partner"/>
+                        <PropertyRef Name="cuit"/>
+                    </Principal>
+                    <Dependent Role="ToRole_BusinessPartnerToDatosLanding">
+                        <PropertyRef Name="partner"/>
+                        <PropertyRef Name="cuit"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="pedidoNuevoToBusinessPartner" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.pedidoNuevo" Multiplicity="1" Role="FromRole_pedidoNuevoToBusinessPartner"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.businessPartner" Multiplicity="*" Role="ToRole_pedidoNuevoToBusinessPartner"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_pedidoNuevoToBusinessPartner">
+                        <PropertyRef Name="partner"/>
+                    </Principal>
+                    <Dependent Role="ToRole_pedidoNuevoToBusinessPartner">
+                        <PropertyRef Name="partner"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="pedidoNuevoToLotes" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.pedidoNuevo" Multiplicity="1" Role="FromRole_pedidoNuevoToLotes"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.lotes" Multiplicity="*" Role="ToRole_pedidoNuevoToLotes"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_pedidoNuevoToLotes">
+                        <PropertyRef Name="partner"/>
+                    </Principal>
+                    <Dependent Role="ToRole_pedidoNuevoToLotes">
+                        <PropertyRef Name="partner"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="pedidoNuevoToComponentes" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.pedidoNuevo" Multiplicity="1" Role="FromRole_pedidoNuevoToComponentes"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.componentes" Multiplicity="*" Role="ToRole_pedidoNuevoToComponentes"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_pedidoNuevoToComponentes">
+                        <PropertyRef Name="partner"/>
+                    </Principal>
+                    <Dependent Role="ToRole_pedidoNuevoToComponentes">
+                        <PropertyRef Name="partner"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="pedidoNuevoToPDF" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.pedidoNuevo" Multiplicity="0..1" Role="FromRole_pedidoNuevoToPDF"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.pdfPedido" Multiplicity="*" Role="ToRole_pedidoNuevoToPDF"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_pedidoNuevoToPDF">
+                        <PropertyRef Name="partner"/>
+                    </Principal>
+                    <Dependent Role="ToRole_pedidoNuevoToPDF">
+                        <PropertyRef Name="partner"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="lotesToComponentes" sap:content-version="1">
+                <End Type="ZOS_HB4_ONBOARDING_SRV.lotes" Multiplicity="1" Role="FromRole_lotesToComponentes"/>
+                <End Type="ZOS_HB4_ONBOARDING_SRV.componentes" Multiplicity="*" Role="ToRole_lotesToComponentes"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_lotesToComponentes">
+                        <PropertyRef Name="materialLote"/>
+                        <PropertyRef Name="nombreCampo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_lotesToComponentes">
+                        <PropertyRef Name="materialLote"/>
+                        <PropertyRef Name="nombreCampo"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZOS_HB4_ONBOARDING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="businessPartnerSet" EntityType="ZOS_HB4_ONBOARDING_SRV.businessPartner" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="datosLandingSet" EntityType="ZOS_HB4_ONBOARDING_SRV.datosLanding" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="localidadSet" EntityType="ZOS_HB4_ONBOARDING_SRV.localidad" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="provinciaSet" EntityType="ZOS_HB4_ONBOARDING_SRV.provincia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="pdfPedidoSet" EntityType="ZOS_HB4_ONBOARDING_SRV.pdfPedido" sap:content-version="1"/>
+                <EntitySet Name="componentesSet" EntityType="ZOS_HB4_ONBOARDING_SRV.componentes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="lotesSet" EntityType="ZOS_HB4_ONBOARDING_SRV.lotes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="pedidoNuevoSet" EntityType="ZOS_HB4_ONBOARDING_SRV.pedidoNuevo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="nroPedidoSet" EntityType="ZOS_HB4_ONBOARDING_SRV.nroPedido" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="disponibleSet" EntityType="ZOS_HB4_ONBOARDING_SRV.disponible" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="fechaSet" EntityType="ZOS_HB4_ONBOARDING_SRV.fecha" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="cultivoSet" EntityType="ZOS_HB4_ONBOARDING_SRV.cultivo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="persistenciaSet" EntityType="ZOS_HB4_ONBOARDING_SRV.persistencia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="parametrosSet" EntityType="ZOS_HB4_ONBOARDING_SRV.parametros" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="lotesToComponentesSet" Association="ZOS_HB4_ONBOARDING_SRV.lotesToComponentes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="lotesSet" Role="FromRole_lotesToComponentes"/>
+                    <End EntitySet="componentesSet" Role="ToRole_lotesToComponentes"/>
+                </AssociationSet>
+                <AssociationSet Name="pedidoNuevoToLotesSet" Association="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToLotes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="pedidoNuevoSet" Role="FromRole_pedidoNuevoToLotes"/>
+                    <End EntitySet="lotesSet" Role="ToRole_pedidoNuevoToLotes"/>
+                </AssociationSet>
+                <AssociationSet Name="pedidoNuevoToComponentesSet" Association="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToComponentes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="pedidoNuevoSet" Role="FromRole_pedidoNuevoToComponentes"/>
+                    <End EntitySet="componentesSet" Role="ToRole_pedidoNuevoToComponentes"/>
+                </AssociationSet>
+                <AssociationSet Name="BusinessPartnerToDatosLandingSet" Association="ZOS_HB4_ONBOARDING_SRV.BusinessPartnerToDatosLanding" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="businessPartnerSet" Role="FromRole_BusinessPartnerToDatosLanding"/>
+                    <End EntitySet="datosLandingSet" Role="ToRole_BusinessPartnerToDatosLanding"/>
+                </AssociationSet>
+                <AssociationSet Name="pedidoNuevoToBusinessPartnerSet" Association="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToBusinessPartner" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="pedidoNuevoSet" Role="FromRole_pedidoNuevoToBusinessPartner"/>
+                    <End EntitySet="businessPartnerSet" Role="ToRole_pedidoNuevoToBusinessPartner"/>
+                </AssociationSet>
+                <AssociationSet Name="pedidoNuevoToPDFSet" Association="ZOS_HB4_ONBOARDING_SRV.pedidoNuevoToPDF" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="pedidoNuevoSet" Role="FromRole_pedidoNuevoToPDF"/>
+                    <End EntitySet="pdfPedidoSet" Role="ToRole_pedidoNuevoToPDF"/>
+                </AssociationSet>
+                <FunctionImport Name="ObtenerNroPedido" ReturnType="ZOS_HB4_ONBOARDING_SRV.nroPedido" EntitySet="nroPedidoSet" m:HttpMethod="GET"/>
+                <FunctionImport Name="ObtenerDisponible" ReturnType="Collection(ZOS_HB4_ONBOARDING_SRV.disponible)" EntitySet="disponibleSet" m:HttpMethod="GET">
+                    <Parameter Name="Variedad" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Cultivo" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ObtenerFecha" ReturnType="ZOS_HB4_ONBOARDING_SRV.fecha" EntitySet="fechaSet" m:HttpMethod="GET"/>
+                <FunctionImport Name="ObtenerCultivos" ReturnType="Collection(ZOS_HB4_ONBOARDING_SRV.cultivo)" EntitySet="cultivoSet" m:HttpMethod="GET"/>
+                <FunctionImport Name="PersistirOnboarding" ReturnType="ZOS_HB4_ONBOARDING_SRV.persistencia" EntitySet="persistenciaSet" m:HttpMethod="POST">
+                    <Parameter Name="DataLotes" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="DataPersonales" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CartaOferta" Type="Edm.String" Mode="In" MaxLength="10"/>
+                </FunctionImport>
+                <FunctionImport Name="ObtenerPersistencia" ReturnType="ZOS_HB4_ONBOARDING_SRV.persistencia" EntitySet="persistenciaSet" m:HttpMethod="GET"/>
+                <FunctionImport Name="ObtenerParametros" ReturnType="Collection(ZOS_HB4_ONBOARDING_SRV.parametros)" EntitySet="parametrosSet" m:HttpMethod="GET"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://reds4:8000/sap/opu/odata/sap/ZOS_HB4_ONBOARDING_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://reds4:8000/sap/opu/odata/sap/ZOS_HB4_ONBOARDING_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
